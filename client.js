@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// CONSTANTESSSSS
+// CONSTANTES - ESSES TOKENS SÃO INVÁLIDOS, SOMENTE PARA TESTE
 var API_ADRESS = 'api.twitter.com';
 var CONSUMER_KEY = '4cebTdGotqP0O26RA5mrNTfDj';
 var TOKEN = '2525968886-7WW92M65AuwgQg9X8Zv86jNV7DRfpm8TiZwh67f';
@@ -21,11 +21,11 @@ function generateAuthHeader() {
 	
 	var map = new Map();
 	
+	map.put("oauth_consumer_key", CONSUMER_KEY);
+	map.put("oauth_nonce", generateNOnce());
+	
 	var header = {
-		'Authorization': format(oAuthStringFormat, 
-			CONSUMER_KEY,
-			generateNOnce(),
-			)
+		'Authorization': format(oAuthStringFormat, "")
 	};
 	
 	return header;
