@@ -6,6 +6,7 @@ var TOKEN = '2525968886-7WW92M65AuwgQg9X8Zv86jNV7DRfpm8TiZwh67f';
 var format = require('util').format;
 var stringify = require('querystring').stringify;
 require('./libs/uris.js');
+require('./map.js');
 
 
 function generateAuthHeader() {
@@ -17,7 +18,9 @@ function generateAuthHeader() {
 		'oauth_timestamp="%s",'+
 		'oauth_token="%s",'+
 		'oauth_version="1.0"';
-
+	
+	var map = new Map();
+	
 	var header = {
 		'Authorization': format(oAuthStringFormat, 
 			CONSUMER_KEY,
