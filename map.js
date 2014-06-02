@@ -2,14 +2,14 @@
 Aqui eu criei um objeto para representar um "map"
 */
 
-function Map() {
+var map = function() {
   var values = {};
   
   this.get = function(key) {
     return values[key];
   }
   
-  this.set = function(key, value) {
+  this.put = function(key, value) {
     var oldValue = values[key];
     values[key] = value;
     return oldValue;
@@ -28,3 +28,5 @@ function Map() {
     return Object.keys(values);
   }
 }
+
+module.exports = map;
