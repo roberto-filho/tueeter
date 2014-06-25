@@ -15,6 +15,15 @@ function Map() {
     return oldValue;
   }
   
+  this.remove(key) {
+    delete values[key];
+  }
+  
+  this.containsKey = function(key) {
+    //return this.values.hasOwnProperty(key);
+    return key in values;
+  }
+  
   this.toString = function() {
     var keys = Object.keys(values);
     var result = '';
