@@ -2,7 +2,7 @@
 Aqui eu criei um objeto para representar um "map"
 */
 
-var map = function() {
+function Map() {
   var values = {};
   
   this.get = function(key) {
@@ -29,4 +29,6 @@ var map = function() {
   }
 }
 
-module.exports = map;
+module.exports.create = function() {
+  return new Map();
+};
